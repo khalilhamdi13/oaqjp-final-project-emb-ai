@@ -1,25 +1,28 @@
-from flask import Flask, request, jsonify
-from EmotionDetection import emotion_detector
+"""
+Flask server for Emotion Detection Application
+"""
 
-app = Flask(**name**)
+from flask import Flask, request, jsonify
+from EmotionDetection.emotion_detection import emotion_detector
+
+app = Flask(__name__)
+
 
 @app.route("/emotionDetector", methods=["GET"])
 def detect_emotion():
-text = request.args.get('text')
+    """
+    Endpoint for emotion detection
+    """
 
-```
-# Handle empty input
-if not text:
-    return jsonify({"message": "Invalid input! Please enter some text."}), 400
+    text = request.args.get("textToAnalyze")
 
-result = emotion_detector(text)
+    result, status = emotion_detector(text)
 
-# Handle API error
-if result is None:
-    return jsonify({"message": "Error processing the request"}), 400
+    if status == 400:
+        return {"error": "Invalid input"}, 400
 
-return jsonify(result)
-```
+    return jsonify(result)
 
-if **name** == "**main**":
-app.run(debug=True)
+
+if __name__ == "__main__":
+    app.run(debug=True)
