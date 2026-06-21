@@ -1,4 +1,4 @@
-# Emotion Detection App
+# Final Project: Emotion Detection App
 
 This project is a Python-based web application that uses Natural Language Processing (NLP) to analyze text and detect human emotions such as joy, anger, sadness, fear, and disgust.
 
