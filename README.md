@@ -33,4 +33,5 @@ The application integrates IBM Watson NLP services to process user input and ret
 
 ```bash
 git clone https://github.com/khalilhamdi13/emotion-detection-app.git
-cd emotion-detection-app
+cd oaqjp-final-project-emb-ai
+
